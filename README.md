@@ -28,26 +28,24 @@ Install required dependencies:
 
 The project requires the yt-dlp and tkinter packages. You can install these using pip:
 
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
 Run the application:
 
 After installing the dependencies, you can run the application:
 
-bash
-Copy
-Edit
+
 python app.py
 A graphical user interface (GUI) will open where you can paste the YouTube playlist URL and start the download.
 
 How to Use
-Paste the YouTube playlist URL in the input field of the UI.
-Select your desired download folder.
-Click the "Download Playlist" button to start downloading.
-Wait for the process to finish and access the downloaded videos in the folder.
-Contributing
+1.Paste the YouTube playlist URL in the input field of the UI.
+2.Select your desired download folder.
+3.Click the "Download Playlist" button to start downloading.
+4.Wait for the process to finish and access the downloaded videos in the folder.
+
+
+Contributing: 
 If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
 
 License
@@ -56,14 +54,3 @@ This project is open-source and available under the MIT License.
 Acknowledgements
 yt-dlp for the download functionality
 Tkinter for the graphical user interface
-markdown
-Copy
-Edit
-
-### Steps to Add to Your GitHub:
-
-1. Create a file named `README.md` in the root directory of your project (if it doesn't already exist).
-2. Copy the content above and paste it into `README.md`.
-3. Save the file.
-
-This should now be visible on your GitHub repository page, explaining your project and how others can use or contribute to it.
