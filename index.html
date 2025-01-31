@@ -1,81 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Playlist Downloader</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    .container {
-      text-align: center;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    input[type="url"] {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
-      margin: 20px 0;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Downloader</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>YouTube Playlist Downloader</h1>
-    <p>Enter the YouTube Playlist URL below:</p>
-    <input type="url" id="playlistUrl" placeholder="Enter Playlist URL">
-    <button onclick="downloadPlaylist()">Download Playlist</button>
-    <p id="status"></p>
-  </div>
-
-  <script>
-    function downloadPlaylist() {
-      const playlistUrl = document.getElementById('playlistUrl').value;
-      if (playlistUrl === '') {
-        alert('Please enter a valid YouTube Playlist URL');
-        return;
-      }
-
-      document.getElementById('status').innerText = 'Processing...';
-
-      fetch('https://your-heroku-app.herokuapp.com/download', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: playlistUrl })
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('status').innerText = data.message;
-      })
-      .catch(error => {
-        document.getElementById('status').innerText = 'Error: ' + error.message;
-      });
-    }
-  </script>
+    <div class="container">
+        <h1>Download YouTube Playlist</h1>
+        <form id="playlist-form">
+            <input type="text" id="playlist-url" placeholder="Enter YouTube Playlist URL" required>
+            <button type="submit">Download Playlist</button>
+        </form>
+        <p id="status"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
